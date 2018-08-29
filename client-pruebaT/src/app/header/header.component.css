@@ -1,0 +1,14 @@
+nav{
+  background-color: whitesmoke;
+}
+img{
+  margin-left: 30px;
+  width: 40px;
+}
+
+h2{
+  display: inline;
+  margin-left: 30px;
+  text-transform: none;
+  color: black;
+}

@@ -1,0 +1,20 @@
+<div class="space-up push-left">
+  <div>
+    <p>Tarea a Completar</p>
+    <input type="text" name="task" placeholder="Introduzca su tarea" [(ngModel)]="task.tarea">
+    <select class="custom-select short">
+      <option [(ngModel)]="task.period">Corto</option>
+      <option [(ngModel)]="task.period">Media</option>
+      <option [(ngModel)]="task.period">Larga</option>
+    </select>
+
+    <div class="space-up">
+      <label class="push-right">O introduce tu tiempo en minutos</label>
+      <input type="number" name="time" [(ngModel)]="task.time" min="0" max="120">
+    </div>
+
+    <div class="space-up">
+      <button type="submit" class="btn btn-primary btn-block short">Iniciar Tarea</button>
+    </div>
+  </div>
+</div>
