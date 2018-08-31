@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema ({
-  tarea: String,
+  task: String,
   period: String,
   time: Number
 },{

@@ -1,0 +1,30 @@
+<section class="center-button">
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Entrar</button>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Login</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="">Introduce tu Correo</p>
+    <input type="email" [(ngModel)]='auth.email' #email='ngModel'  required>
+
+    <p class="space-up">Introduce tu Contraseña</p>
+    <input type="password" name="pass1" #password='ngModel' [(ngModel)]='auth.password' required>
+    <div style="color: red; font-size: 15px" *ngIf="password.invalid && (password.touched || password.dirty)">
+      <p>Se necesita la contraseña</p>
+    </div>
+
+    <div class="space-up">
+    <button type="button" class="btn btn-outline-success" (click)="login()">Login</button>
+    </div>
+  </div>
+</ng-template>
+
+</section>
+
+

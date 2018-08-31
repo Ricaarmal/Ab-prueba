@@ -1,0 +1,42 @@
+<section class="center-button">
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">Registrate</button>
+    
+    
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Registrate</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="">Introduce tu Correo</p>
+        <input type="email" [(ngModel)]='auth.email' #email='ngModel' required>
+        <div style="color: red" *ngIf="email.invalid">
+          <p>
+            Se necesita el correo
+          </p>
+        </div>
+    
+        <p class="space-up">Introduce tu Contraseña</p>
+        <input type="password" name="pass1" #password='ngModel' [(ngModel)]='auth.password' required>
+        <div style="color: red; font-size: 15px" *ngIf="password.invalid && (password.touched || password.dirty)">
+          <p>Se necesita la contraseña</p>
+        </div>
+
+        <p class="space-up">Vuelve a introducir tu Contraseña</p>
+        <input type="password" name="password2" [(ngModel)]="password2" #myPassword2='ngModel' required>
+        <div style="color: red" *ngIf="myPassword2.invalid">
+          <p>Se necesitan ambas Contraseñas</p>
+        </div>
+        <div style="color: red" *ngIf="password !== myPassword2 && myPassword2.invalid" >
+          <p>Se necesitan ambas contraseñas</p>
+        </div>
+    
+        <div class="space-up">
+        <button type="button" class="btn btn-outline-success" (click)="signUp()">Login</button>
+        </div>
+      </div>
+    </ng-template>
+    
+    </section>

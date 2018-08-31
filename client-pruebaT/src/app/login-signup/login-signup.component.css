@@ -1,0 +1,18 @@
+section {
+  background-image: url('https://i1.wp.com/hipertextual.com/archivo/wp-content/uploads/2014/11/fondo-pantalla.jpg?resize=670%2C413&ssl=1');
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-position: center center;
+  margin-top: 20px;
+  height: 500px;
+  display: flex;
+  justify-content: center;  
+}
+
+button{
+  height: 40px;
+}
+
+.space-up {
+  margin-top: 20px;
+}

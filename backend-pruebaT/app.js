@@ -10,7 +10,7 @@ const logger       = require('morgan');
 const path         = require('path');
 
 // Session
-
+const passport     = require('./helpers/passport')
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 
@@ -46,6 +46,11 @@ app.use(session({
     ttl: 30 * 24 * 60 * 60 // 30 dias
   })
 }))
+
+// Passport
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Middleware Setup
 app.use(logger('dev'));

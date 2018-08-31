@@ -1,20 +1,24 @@
 <div class="space-up push-left">
   <div>
     <p>Tarea a Completar</p>
-    <input type="text" name="task" placeholder="Introduzca su tarea" [(ngModel)]="task.tarea">
-    <select class="custom-select short">
-      <option [(ngModel)]="task.period">Corto</option>
-      <option [(ngModel)]="task.period">Media</option>
-      <option [(ngModel)]="task.period">Larga</option>
+    <input #tasking='ngModel' type="text" name="task" placeholder="Introduzca su tarea" [(ngModel)]="task.task" required>
+    <div style="color:red" *ngIf="(tasking.touched || tasking.dirty) && tasking.invalid">
+      <p>La tarea es requerida</p>
+    </div>
+    <select *ngIf="this.showOption" [(ngModel)]="task.time" class="custom-select short">
+      <option value="30">Corto</option>
+      <option value="60">Media</option>
+      <option value="120">Larga</option>
     </select>
+    <p>O desea poner su tiempo Manualmente <input type="checkbox" #checkbox (change)="toogleTime(checkbox.checked)"></p>
 
-    <div class="space-up">
+    <div class="space-up" *ngIf="this.showTime">
       <label class="push-right">O introduce tu tiempo en minutos</label>
       <input type="number" name="time" [(ngModel)]="task.time" min="0" max="120">
     </div>
 
     <div class="space-up">
-      <button type="submit" class="btn btn-primary btn-block short">Iniciar Tarea</button>
+      <button type="submit" (click)="createTask()" class="btn btn-primary btn-block short">Iniciar Tarea</button>
     </div>
   </div>
 </div>

@@ -3,4 +3,17 @@
     <img src="https://unfuddle.com/assets/product-summary-tasks-5a6d6625ed37fb42e18a61c2c24087ee.png" alt="">
     <h2>Tasks</h2> 
   </a>
+  <div class="btn-group space-right" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-link dropdown-toggle"
+            aria-controls="dropdown-basic">
+      Profile <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['task']">Crear Tarea</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['alltasks']">Mostrar Tareas</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['login']">Entrar</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['signup']">Registrarse</a></li>
+    </ul>
+  </div>
 </nav>

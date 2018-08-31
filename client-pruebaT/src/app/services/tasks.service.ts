@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class TasksService {
 
-  url = 'https://localhost:3000/api';
+  url = 'http://localhost:3000/api';
 
   constructor(private http: Http) {}
 

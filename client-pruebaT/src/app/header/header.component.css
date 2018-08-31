@@ -12,3 +12,7 @@ h2{
   text-transform: none;
   color: black;
 }
+
+.space-right {
+  margin-right: 70px;
+}
